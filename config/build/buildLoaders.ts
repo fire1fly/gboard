@@ -29,8 +29,14 @@ export default function buildLoaders({isDev}: BuildOptions): RuleSetRule[] {
     ],
   }
 
+  const fontsLoader = {
+    test: /\.(woff|woff2|eot|ttf|otf)$/i,
+    type: 'asset/resource'
+  }
+
   return [
     typescriptLoader,
     cssLoader,
+    fontsLoader
   ]
 }
