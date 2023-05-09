@@ -25,6 +25,7 @@ export default function buildLoaders({isDev}: BuildOptions): RuleSetRule[] {
           }
           },
       },
+      "postcss-loader",
       "sass-loader",
     ],
   }
