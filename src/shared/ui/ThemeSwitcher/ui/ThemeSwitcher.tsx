@@ -22,7 +22,7 @@ export const ThemeSwitcher: FC<ThemeSwitcherProps> = ({ className }) => {
       onClick={toggleTheme}
       theme={ThemeButton.CLEAR}
     >
-      {theme === Theme.DARK ? <DarkIcon /> : <LightIcon stroke='#FFFFFF' strokeWidth={1} strokeLinejoin="round" />}
+      {theme === Theme.DARK ? <LightIcon className={cls.icon_light} /> : <DarkIcon className={cls.icon_dark} />}
     </Button>
   )
 }
