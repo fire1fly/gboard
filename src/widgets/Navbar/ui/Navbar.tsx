@@ -1,6 +1,6 @@
 import { FC } from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
-import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink'
+import { AppLink, AppLinkTheme } from 'shared/ui/AppLink'
 import { ThemeSwitcher } from 'widgets/ThemeSwitcher'
 import cls from './Navbar.module.sass'
 

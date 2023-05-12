@@ -1,7 +1,8 @@
 import { ThemeProvider } from './ui/ThemeProvider';
-import { ThemeContext } from './config/ThemeContext'
+import { ThemeContext, Theme } from './config/ThemeContext'
 
 export {
   ThemeProvider,
-  ThemeContext
+  ThemeContext,
+  Theme
 }
