@@ -10,6 +10,20 @@ export default function buildLoaders({isDev}: BuildOptions): RuleSetRule[] {
     exclude: /node_modules/,
   }
 
+  const svgLoader = {
+    test: /\.svg$/,
+    use: ['@svgr/webpack'],
+  }
+
+  const fileLoader = {
+    test: /\.(png|jpe?g|gif|woff|woff2|eot|ttf|otf)$/i,
+    use: [
+      {
+        loader: 'file-loader',
+      },
+    ]
+  }
+
   const cssLoader = {
     test: /\.s[ac]ss$/i,
     use: [
@@ -36,8 +50,9 @@ export default function buildLoaders({isDev}: BuildOptions): RuleSetRule[] {
   }
 
   return [
+    fileLoader,
+    svgLoader,
     typescriptLoader,
-    cssLoader,
-    fontsLoader
+    cssLoader
   ]
 }
