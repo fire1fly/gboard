@@ -15,4 +15,4 @@ export function classNames(...params: (string | { [key: string]: boolean })[]): 
   });
 
   return classes.join(' ');
-  }
+}
