@@ -1,0 +1,41 @@
+:root {
+  /* Typography */
+  --font-family-main: "Open Sans Regular", system-ui, -apple-system, sans-serif;
+  --font-size-m: 14px;
+  --font-line-m: 22px;
+  --font-m: var(--font-size-m) / var(--font-line-m) var(--font-family-main);
+  --font-size-l: 18px;
+  --font-line-l: 26px;
+  --font-l: var(--font-size-l) / var(--font-line-l) var(--font-family-main);
+
+  /* Colors */
+  --color-secondary-darkest: #111927;
+  --color-secondary-dark: #384250;
+  --color-secondary-main: #6c737f;
+  --color-secondary-light: #f3f4f6;
+  --color-secondary-lightest: #f8f9fa;
+  --color-blue-main: #2970ff;
+  --color-blue-dark: #004eeb;
+  --color-blue-darkest: #003;
+  --color-green-main: #16b364;
+  --color-green-dark: #087443;
+  --color-green-darkest: #084c2e;
+  --color-success-main: #15b79e;
+  --color-success-dark: #107569;
+  --color-success-darkest: #134e48;
+  --color-info-main: #06aed4;
+  --color-info-dark: #0e7090;
+  --color-info-darkest: #164c63;
+  --color-warning-main: #f79009;
+  --color-warning-dark: #b54708;
+  --color-warning-darkest: #7a2e0e;
+  --color-error-main: #f04438;
+  --color-error-dark: #b42318;
+  --color-error-darkest: #7a271a;
+
+  /* Measures */
+
+  --navbar-height: 50px;
+  --sidebar-width: 300px;
+  --sidebar-width-collapsed: 80px;
+}
