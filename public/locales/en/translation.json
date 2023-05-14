@@ -2,6 +2,7 @@
   "Текст": "Hello world!",
   "Перевод": "Translate",
   "Главная страница": "Main page",
-  "Не найдено": "404 Not found",
-  "Кнопка переключения языка": "English"
+  "notFound": "404 Not found",
+  "Кнопка переключения языка": "English",
+  "linkToMainPage": "To main page"
 }

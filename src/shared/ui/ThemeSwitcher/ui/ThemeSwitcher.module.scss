@@ -1,0 +1,9 @@
+.icon {
+  &_light {
+    fill: var(--bg-color);
+  }
+
+  &_dark {
+    stroke: var(--bg-color);
+  }
+}
