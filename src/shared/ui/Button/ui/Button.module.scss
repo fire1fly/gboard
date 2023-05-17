@@ -10,3 +10,12 @@
   padding: 0;
   background: none;
 }
+
+.primary {
+  border-radius: 12px;
+  border: none;
+  padding: 8px 20px;
+  background-color: var(--color-blue-main);
+  font: var(--font-m);
+  color: var(--color-white);
+}
