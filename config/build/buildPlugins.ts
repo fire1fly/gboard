@@ -3,9 +3,10 @@ import webpack from 'webpack';
 
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import { BuildOptions } from './types/config';
 
-export default function buildPlugins({ paths, isDev }: BuildOptions):
+export default function buildPlugins({ paths, isDev, analyze }: BuildOptions):
   webpack.WebpackPluginInstance[] {
   return [
     new HtmlWebpackPlugin({
@@ -20,5 +21,9 @@ export default function buildPlugins({ paths, isDev }: BuildOptions):
       __IS_DEV__: JSON.stringify(isDev),
     }),
     new webpack.HotModuleReplacementPlugin(),
+    new BundleAnalyzerPlugin({
+      analyzerMode: analyze ? 'server' : 'disabled',
+      openAnalyzer: false,
+    }),
   ];
 }
