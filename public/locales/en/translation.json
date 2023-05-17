@@ -4,5 +4,9 @@
   "Главная страница": "Main page",
   "notFound": "404 Not found",
   "Кнопка переключения языка": "English",
-  "linkToMainPage": "To main page"
+  "linkToMainPage": "To main page",
+  "PageError": {
+    "title": "Что-то пошло не так...",
+    "reload": "Обновить страницу"
+  }
 }

@@ -1,0 +1,17 @@
+.PageError {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  &__title {
+    font: var(--font-xl);
+    font-weight: bold;
+  }
+
+  &__button {
+    margin-top: 10px;
+  }
+}
