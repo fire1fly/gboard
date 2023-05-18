@@ -1,7 +1,7 @@
 import { classNames } from './classNames';
 
 describe('classNames', () => {
-  test('classNames with 1 arg', () => {
+  test('with 1 arg', () => {
     expect(classNames('class1')).toEqual('class1');
   });
   test('with multiple args', () => {
