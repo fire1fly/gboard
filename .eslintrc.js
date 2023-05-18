@@ -42,7 +42,8 @@ module.exports = {
         'no-underscore-dangle': 'off',
         'linebreak-style': [0],
         'i18next/no-literal-string': ['error', { markupOnly: true }],
-        'max-len': ['error', { 'ignoreComments': true, code: 100 }]
+        'max-len': ['error', { 'ignoreComments': true, code: 100 }],
+        "import/no-extraneous-dependencies": ["error", { "devDependencies": true }]
     },
     globals: {
         __IS_DEV__: true,
