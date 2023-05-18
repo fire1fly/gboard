@@ -6,7 +6,8 @@
   "Кнопка переключения языка": "English",
   "linkToMainPage": "To main page",
   "PageError": {
-    "title": "Что-то пошло не так...",
-    "reload": "Обновить страницу"
-  }
+    "title": "Something went wrong...",
+    "reload": "Refresh the page"
+  },
+  "toggleButton": "Toggle"
 }
