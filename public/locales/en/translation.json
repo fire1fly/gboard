@@ -1,13 +1,17 @@
 {
-  "Текст": "Hello world!",
-  "Перевод": "Translate",
-  "Главная страница": "Main page",
   "notFound": "404 Not found",
-  "Кнопка переключения языка": "English",
+  "toggleLangButton": "English",
   "linkToMainPage": "To main page",
   "PageError": {
     "title": "Something went wrong...",
     "reload": "Refresh the page"
   },
-  "toggleButton": "Toggle"
+  "toggleButton": "Toggle",
+  "NavbarLinks": {
+    "main": "Main page",
+    "about": "About"
+  },
+  "MainPage": {
+    "title": "Main page"
+  }
 }
