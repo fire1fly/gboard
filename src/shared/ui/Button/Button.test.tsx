@@ -14,5 +14,6 @@ describe('Button tests', () => {
   test('render button with primary theme', () => {
     render(<Button theme={ThemeButton.PRIMARY} />);
     expect(screen.getByRole('button')).toHaveClass('primary');
+    screen.debug();
   });
 });
