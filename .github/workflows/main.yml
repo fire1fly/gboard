@@ -1,5 +1,5 @@
 name: Gboard GitHub Actions
-run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+run-name: linting, testing, building
 on:
   push:
     branches: [ main ]
