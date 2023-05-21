@@ -1,3 +1,4 @@
 .vscode
+.loki
 node_modules
 /build
