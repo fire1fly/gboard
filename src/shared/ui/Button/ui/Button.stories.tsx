@@ -2,7 +2,8 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
-import { Button, ThemeButton } from './Button';
+import IconArrowRight from 'shared/assets/icons/icon-angle-bracket-right.svg';
+import { Button, ButtonSize, ButtonTheme } from './Button';
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 const meta: Meta<typeof Button> = {
@@ -21,14 +22,14 @@ type Story = StoryObj<typeof Button>;
 
 export const Clear: Story = {
   args: {
-    theme: ThemeButton.CLEAR,
+    theme: ButtonTheme.CLEAR,
     children: 'Button',
   },
   decorators: [ThemeDecorator(Theme.DEFAULT)],
 };
 export const ClearDark: Story = {
   args: {
-    theme: ThemeButton.CLEAR,
+    theme: ButtonTheme.CLEAR,
     children: 'Button',
   },
   decorators: [ThemeDecorator(Theme.DARK)],
@@ -36,14 +37,14 @@ export const ClearDark: Story = {
 
 export const Primary: Story = {
   args: {
-    theme: ThemeButton.PRIMARY,
+    theme: ButtonTheme.PRIMARY,
     children: 'Button',
   },
   decorators: [ThemeDecorator(Theme.DEFAULT)],
 };
 export const PrimaryDark: Story = {
   args: {
-    theme: ThemeButton.PRIMARY,
+    theme: ButtonTheme.PRIMARY,
     children: 'Button',
   },
   decorators: [ThemeDecorator(Theme.DARK)],
@@ -51,15 +52,39 @@ export const PrimaryDark: Story = {
 
 export const Outline: Story = {
   args: {
-    theme: ThemeButton.OUTLINE,
+    theme: ButtonTheme.OUTLINE,
     children: 'Button',
   },
   decorators: [ThemeDecorator(Theme.DEFAULT)],
 };
 export const OutlineDark: Story = {
   args: {
-    theme: ThemeButton.OUTLINE,
+    theme: ButtonTheme.OUTLINE,
     children: 'Button',
   },
   decorators: [ThemeDecorator(Theme.DARK)],
+};
+export const SquareSizeM: Story = {
+  args: {
+    theme: ButtonTheme.OUTLINE,
+    square: true,
+    size: ButtonSize.M,
+    children: '>',
+  },
+};
+export const SquareSizeL: Story = {
+  args: {
+    theme: ButtonTheme.OUTLINE,
+    square: true,
+    size: ButtonSize.L,
+    children: '>',
+  },
+};
+export const SquareSizeXL: Story = {
+  args: {
+    theme: ButtonTheme.OUTLINE,
+    square: true,
+    size: ButtonSize.XL,
+    children: '>',
+  },
 };
