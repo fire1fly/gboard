@@ -15,6 +15,9 @@
     "test:ui": "loki test",
     "test:ui:approve": "loki approve",
     "test:ui:ci": "concurrently --kill-others --raw --success first \"npm run storybook\" \"npm run test:ui\" \"deelay\"",
+    "test:ui:report": "npm run test:ui:json && npm run test:ui:html",
+    "test:ui:json": "node scripts/generate-visual-json-report.js",
+    "test:ui:html": "reg-cli --from .loki/report.json --report .loki/report.html",
     "storybook": "storybook dev -p 6006 -c ./config/storybook -s ./public",
     "storybook:build": "storybook build -c ./config/storybook -s ./public"
   },
@@ -69,6 +72,7 @@
     "postcss": "^8.4.23",
     "postcss-loader": "^7.3.0",
     "postcss-preset-env": "^8.3.2",
+    "reg-cli": "^0.17.6",
     "regenerator-runtime": "^0.13.9",
     "sass": "^1.49.9",
     "sass-loader": "^12.6.0",
