@@ -1,6 +1,7 @@
 {
   "notFound": "404 Not found",
   "toggleLangButton": "English",
+  "toggleLangButtonShort": "En",
   "linkToMainPage": "To main page",
   "PageError": {
     "title": "Something went wrong...",

@@ -1,6 +1,7 @@
 {
   "notFound": "404 Не найдено",
   "toggleLangButton": "Русский",
+  "toggleLangButtonShort": "Ру",
   "linkToMainPage": "Вернуться на главную страницу",
   "PageError": {
     "title": "Что-то пошло не так...",
