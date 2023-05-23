@@ -13,6 +13,7 @@
 
   /* Colors */
   --color-white: #fff;
+  --color-black: #000;
   --color-secondary-darkest: #111927;
   --color-secondary-dark: #384250;
   --color-secondary-main: #6c737f;
@@ -36,10 +37,15 @@
   --color-error-main: #f04438;
   --color-error-dark: #b42318;
   --color-error-darkest: #7a271a;
+  --color-overlay: rgb(0 0 0 / 60%);
 
   /* Measures */
 
   --navbar-height: 50px;
   --sidebar-width: 300px;
   --sidebar-width-collapsed: 80px;
+
+  /* z indexes */
+
+  --z-index-modal: 10;
 }
