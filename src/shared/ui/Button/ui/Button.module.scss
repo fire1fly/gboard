@@ -15,23 +15,25 @@
 .primary {
   border-radius: 12px;
   border: none;
-  padding: 8px 20px;
-  background-color: var(--color-blue-main);
-  font: var(--font-m);
+  background-color: var(--color-indigo-main);
   color: var(--color-white);
 }
 
 .outline {
   border-radius: 12px;
-  border: 1px solid var(--color-blue-main);
-  padding: 8px 20px;
+  border: 1px solid var(--color-indigo-main);
   background-color: transparent;
-  font: var(--font-m);
-  color: var(--color-blue-main);
+  color: var(--color-indigo-main);
 }
 
 .square {
   padding: 0;
+
+  &.size_s {
+    width: var(--font-line-s);
+    height: var(--font-line-s);
+    font: var(--font-s);
+  }
 
   &.size_m {
     width: var(--font-line-m);
@@ -52,14 +54,22 @@
   }
 }
 
+.size_s {
+  padding: 4px 8px;
+  font: var(--font-s);
+}
+
 .size_m {
+  padding: 5px 10px;
   font: var(--font-m);
 }
 
 .size_l {
+  padding: 8px 16px;
   font: var(--font-l);
 }
 
 .size_xl {
+  padding: 10px 20px;
   font: var(--font-xl);
 }

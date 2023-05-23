@@ -10,7 +10,7 @@
 
   &.theme-dark {
     --bg-color: #0e1320;
-    --primary-color: #edf2f7;
+    --primary-color: var(--color-white);
   }
 }
 

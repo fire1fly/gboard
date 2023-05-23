@@ -3,8 +3,9 @@
   flex-shrink: 0;
   width: var(--sidebar-width);
   height: calc(100vh - var(--navbar-height));
-  background: var(--inverted-bg-color);
+  background: var(--outbar-bg);
   transition: width 0.3s;
+  color: var(--outbar-color);
 }
 
 .nav {
@@ -15,21 +16,44 @@
 
   &_item {
     margin-top: 10px;
+    border-radius: 8px;
     display: flex;
     align-items: center;
+    padding: 6px 16px;
+    transition: 0.3s;
+
+    &:active {
+      background-color: var(--outbar-item-active);
+    }
 
     &:nth-of-type(1) {
       margin-top: 0;
     }
 
     &_icon {
-      color: var(--color-blue-main);
+      transition: 0.3s;
+      color: var(--outbar-color);
     }
 
     &_link {
       margin-left: 10px;
       white-space: nowrap;
+      color: var(--outbar-color);
       transition: 0.3s;
+    }
+
+    &:hover {
+      background-color: var(--outbar-item-hover);
+
+      .nav_item {
+        &_icon {
+          color: var(--color-indigo-main);
+        }
+
+        &_link {
+          color: var(--color-white);
+        }
+      }
     }
   }
 }
@@ -51,13 +75,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--inverted-bg-color);
+  background: var(--outbar-bg);
   line-height: 0;
-  color: var(--bg-color);
+  color: var(--color-white);
 
   &_icon {
+    flex-shrink: 0;
     width: 30px;
     height: 30px;
+    transition: 0.3s transform;
   }
 }
 
@@ -71,11 +97,20 @@
 
   .nav {
     &_item {
+      padding-right: 0;
+      padding-left: 10px;
+
       &_link {
         margin-left: 0;
         opacity: 0;
         width: 0;
       }
+    }
+  }
+
+  .collapseBtn {
+    &_icon {
+      transform: scale(-1, 1);
     }
   }
 }

@@ -1,11 +1,12 @@
 .Navbar {
   width: 100%;
   height: var(--navbar-height);
-  background: var(--inverted-bg-color);
+  background: var(--outbar-bg);
   padding: 10px 20px;
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  color: var(--outbar-color);
 }
 
 .links {
@@ -15,6 +16,8 @@
   gap: 20px;
 
   &__item {
-    color: var(--primary-color-inverted);
+    color: var(--color-white);
   }
 }
+
+// #1C2536

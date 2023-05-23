@@ -23,9 +23,8 @@ export const Navbar: FC<NavbarProps> = ({ className }) => {
     <div className={classNames(cls.Navbar)}>
       <div className={cls.links}>
         <Button
-          className={cls.links__item}
-          theme={ButtonTheme.CLEAR}
-          size={ButtonSize.M}
+          theme={ButtonTheme.OUTLINE}
+          size={ButtonSize.S}
           onClick={onToggleModal}
         >
           {t('signIn_label')}
