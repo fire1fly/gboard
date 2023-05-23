@@ -6,10 +6,9 @@ import { useTranslation } from 'react-i18next';
 
 import { Button, ButtonSize } from 'shared/ui/Button';
 import { AppLink, AppLinkTheme } from 'shared/ui/AppLink';
-import { RoutePath } from 'app/providers/router/config/routeConfig';
+import { AppRoutes, RoutePath } from 'app/providers/router/config/routeConfig';
 
 import IconArrowLeft from 'shared/assets/icons/icon-angle-bracket-left.svg';
-import IconArrowRight from 'shared/assets/icons/icon-angle-bracket-right.svg';
 import IconPageHome from 'shared/assets/icons/icon-page-home.svg';
 import IconPageAbout from 'shared/assets/icons/icon-page-about.svg';
 import cls from './Sidebar.module.scss';
@@ -40,17 +39,14 @@ export const Sidebar: FC<SidebarProps> = ({ className }) => {
         size={ButtonSize.XL}
         className={cls.collapseBtn}
       >
-        {
-          collapsed
-            ? <IconArrowRight className={cls.collapseBtn_icon} />
-            : <IconArrowLeft className={cls.collapseBtn_icon} />
-        }
+        <IconArrowLeft className={cls.collapseBtn_icon} />
       </Button>
       <div className={cls.nav}>
         <AppLink
           theme={AppLinkTheme.PRIMARY}
           to={RoutePath.main}
           className={cls.nav_item}
+          title={AppRoutes.MAIN}
         >
           <IconPageHome className={cls.nav_item_icon} />
           <span className={cls.nav_item_link}>{t('NavbarLinks:main')}</span>
@@ -59,6 +55,7 @@ export const Sidebar: FC<SidebarProps> = ({ className }) => {
           theme={AppLinkTheme.PRIMARY}
           to={RoutePath.about}
           className={cls.nav_item}
+          title={AppRoutes.ABOUT}
         >
           <IconPageAbout className={cls.nav_item_icon} />
           <span className={cls.nav_item_link}>{t('NavbarLinks:about')}</span>
