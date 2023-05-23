@@ -14,5 +14,6 @@
   },
   "MainPage": {
     "title": "Main page"
-  }
+  },
+  "signIn_label": "Log in"
 }

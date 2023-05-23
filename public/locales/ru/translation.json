@@ -14,5 +14,6 @@
   },
   "MainPage": {
     "title": "Главная"
-  }
+  },
+  "signIn_label": "Войти"
 }
