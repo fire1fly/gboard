@@ -1,9 +1,9 @@
 import { FC } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { classNames } from 'shared/lib/classNames/classNames';
 import { Button, ButtonSize } from 'shared/ui/Button';
 import { StateSchema } from 'app/providers/StoreProvider/config/StateSchema';
-import { counterActions } from '../model/slice/counter.slice';
+import { counterActions } from '../model/slice/counterSlice';
+import { getCounterValue } from '../model/selectors/getCounterValue/getCounterValue';
 
 interface CounterProps {
   className?: string;
@@ -11,7 +11,7 @@ interface CounterProps {
 
 export const Counter: FC<CounterProps> = ({ className }) => {
   const dispatch = useDispatch();
-  const counter = useSelector((state: StateSchema) => state.counter.value);
+  const counter = useSelector((state: StateSchema) => getCounterValue(state));
 
   const increment = () => {
     dispatch(counterActions.increment());
@@ -22,14 +22,24 @@ export const Counter: FC<CounterProps> = ({ className }) => {
   };
 
   return (
-    <div>
-      <h1>
+    <div data-testid="counter">
+      <h1 data-testid="counter-value">
         {counter}
       </h1>
-      <Button square size={ButtonSize.XL} onClick={decrement}>
+      <Button
+        square
+        size={ButtonSize.XL}
+        onClick={decrement}
+        data-testid="counter-decrement"
+      >
         -
       </Button>
-      <Button square size={ButtonSize.XL} onClick={increment}>
+      <Button
+        square
+        size={ButtonSize.XL}
+        onClick={increment}
+        data-testid="counter-increment"
+      >
         +
       </Button>
     </div>
