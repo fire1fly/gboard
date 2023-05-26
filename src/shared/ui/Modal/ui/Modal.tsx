@@ -47,9 +47,7 @@ export const Modal: FC<ModalProps> = (props) => {
   };
 
   useEffect(() => {
-    // if (isOpen) {
     window.addEventListener('keydown', onKeyDown);
-    // }
     return () => {
       clearTimeout(timerRef.current);
       window.removeEventListener('keydown', onKeyDown);
@@ -60,13 +58,11 @@ export const Modal: FC<ModalProps> = (props) => {
   const mods: Record<string, boolean> = {
     [cls.opened]: isOpen,
     [cls.closing]: isClosing,
-    // temporary solution (redifining theme variables)
-    [cls[theme]]: true,
   };
 
   return (
     <Portal>
-      <div className={classNames(cls.Modal, className, mods)}>
+      <div className={classNames(cls.Modal, className, mods, theme)}>
         <div role="presentation" className={cls.overlay} onClick={closeHandler}>
           <div role="presentation" className={cls.content} onClick={onContentClick}>
             { children }

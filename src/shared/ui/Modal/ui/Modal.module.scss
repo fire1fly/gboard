@@ -7,11 +7,6 @@
   z-index: 1;
   opacity: 0;
   pointer-events: none;
-
-  &.theme-dark {
-    --bg-color: #0e1320;
-    --primary-color: var(--color-white);
-  }
 }
 
 .overlay {
@@ -34,9 +29,9 @@
 }
 
 .opened {
+  z-index: var(--z-index-modal);
   pointer-events: auto;
   opacity: 1;
-  z-index: var(--z-index-modal);
 
   .content {
     transform: scale(1);
