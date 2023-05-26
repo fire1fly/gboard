@@ -67,7 +67,7 @@ module.exports = {
       },
     },
     {
-      files: ['**/src/**/*.slice.ts'],
+      files: ['**/src/**/*Slice.ts'],
       rules: { 'no-param-reassign': ['error', { props: false }] },
     },
   ],
