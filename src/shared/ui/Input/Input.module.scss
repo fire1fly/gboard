@@ -1,0 +1,75 @@
+.InputWrapper {
+  width: 100%;
+}
+
+.InputField {
+  position: relative;
+  border: 1px solid var(--field-border-color);
+  border-radius: 8px;
+  height: 55px;
+  width: 100%;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 20px;
+  padding-bottom: 4px;
+  background: transparent;
+  font: var(--font-s);
+  transition: 0.3s;
+}
+
+.InputFieldWithoutLabel {
+  padding-top: 4px;
+}
+
+.InputLabel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: var(--secondary-color);
+  transition: 0.3s;
+  transform: translate(12px, 15px) scale(1);
+}
+
+input {
+  border: none;
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  color: var(--primary-color);
+}
+
+.InputOutputMessage {
+  padding-left: 12px;
+  padding-right: 12px;
+  font: var(--font-xs);
+  color: var(--primary-color);
+}
+
+.InputFieldFocused {
+  border-color: transparent;
+  box-shadow: 0 0 0 2px var(--color-indigo-main);
+
+  .InputLabel {
+    transform: translate(6px, 4px) scale(0.85);
+    color: var(--color-indigo-main);
+  }
+}
+
+.InputFieldFilled {
+  .InputLabel {
+    transform: translate(6px, 4px) scale(0.85);
+  }
+}
+
+.InputFieldError {
+  border-color: transparent;
+  box-shadow: 0 0 0 2px var(--color-error-main);
+
+  .InputLabel {
+    color: var(--color-error-main);
+  }
+
+  & + .InputOutputMessage {
+    color: var(--color-error-main);
+  }
+}
