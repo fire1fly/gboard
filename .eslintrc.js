@@ -33,6 +33,7 @@ module.exports = {
     'react/require-default-props': 'off',
     'react/react-in-jsx-scope': 'off',
     'react/jsx-props-no-spreading': 'warn',
+    'react/prop-types': 'off',
     'react/function-component-definition': 'off',
     'no-shadow': 'off',
     'import/extensions': 'off',
@@ -54,6 +55,8 @@ module.exports = {
     'no-undef': ['warn'],
     'react-hooks/rules-of-hooks': 'error', // Checks rules of Hooks
     'react-hooks/exhaustive-deps': 'error', // Checks effect dependencies
+    'global-require': 'off',
+    'import/no-dynamic-require': 'off',
   },
   globals: {
     __IS_DEV__: true,
