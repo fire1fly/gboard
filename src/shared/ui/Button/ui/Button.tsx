@@ -28,7 +28,7 @@ export const Button: FC<ButtonProps> = (props) => {
     theme,
     square,
     size,
-    ...othetProps
+    ...otherProps
   } = props;
 
   const clsMods: Record<string, boolean> = {
@@ -41,7 +41,7 @@ export const Button: FC<ButtonProps> = (props) => {
     <button
       type="button"
       className={classNames(cls.Button, className, clsMods)}
-      {...othetProps}
+      {...otherProps}
     >
       {children}
     </button>

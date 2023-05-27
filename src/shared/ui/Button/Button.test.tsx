@@ -3,7 +3,6 @@ import { Button, ButtonTheme } from './ui/Button';
 
 describe('Button tests', () => {
   test('render button with text content', () => {
-    /* eslint-disable i18next/no-literal-string */
     render(<Button theme={ButtonTheme.CLEAR}>TEST BUTTON</Button>);
     expect(screen.getByText('TEST BUTTON')).toHaveClass('clear');
   });
