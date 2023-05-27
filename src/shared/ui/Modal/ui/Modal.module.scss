@@ -23,15 +23,15 @@
   max-width: 60%;
   padding: 20px;
   background: var(--bg-color);
+  transform: scale(0.8);
   transition: 0.3s transform;
-  transform: scale(0.5);
   color: var(--primary-color);
 }
 
 .opened {
   z-index: var(--z-index-modal);
   pointer-events: auto;
-  opacity: 1;
+  animation: fade-in 0.3s linear 0s 1 normal forwards;
 
   .content {
     transform: scale(1);
@@ -39,7 +39,25 @@
 }
 
 .closing {
+  animation: fade-out 0.3s linear 0s 1 normal forwards;
+
   .content {
-    transform: scale(0.5);
+    transform: scale(0.8);
+  }
+}
+
+@keyframes fade-in {
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
   }
 }

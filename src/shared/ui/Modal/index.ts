@@ -1,3 +1,3 @@
 export {
-  Modal,
+  Modal, ModalProps,
 } from './ui/Modal';
