@@ -15,5 +15,15 @@
   "MainPage": {
     "title": "Главная"
   },
-  "signIn_label": "Войти"
+  "signIn_label": "Войти",
+  "form": {
+    "signin": "Войти",
+    "label": {
+      "name": "Имя",
+      "password": "Пароль"
+    },
+    "output": {
+      "incorrectData": "Неккоректные данные"
+    }
+  }
 }

@@ -15,5 +15,15 @@
   "MainPage": {
     "title": "Main page"
   },
-  "signIn_label": "Log in"
+  "signIn_label": "Log in",
+  "form": {
+    "signin": "Log in",
+    "label": {
+      "name": "Name",
+      "password": "Password"
+    },
+    "output": {
+      "incorrectData": "Incorrect data"
+    }
+  }
 }
