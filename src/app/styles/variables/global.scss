@@ -1,6 +1,9 @@
 :root {
   /* Typography */
   --font-family-main: "Open Sans Regular", system-ui, -apple-system, sans-serif;
+  --font-size-xs: 12px;
+  --font-line-xs: 20px;
+  --font-xs: var(--font-size-xs) / var(--font-line-xs) var(--font-family-main);
   --font-size-s: 14px;
   --font-line-s: 22px;
   --font-s: var(--font-size-s) / var(--font-line-s) var(--font-family-main);
