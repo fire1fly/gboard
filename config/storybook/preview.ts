@@ -1,5 +1,5 @@
 import type { Preview } from '@storybook/react';
-
+import i18n from './i18next';
 import { StyleDecorator } from '../../src/shared/config/storybook/StyleDecorator/StyleDecorator';
 import { ThemeDecorator } from '../../src/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from '../../src/app/providers/ThemeProvider';
@@ -15,8 +15,21 @@ const preview: Preview = {
         date: /Date$/,
       },
     },
+    i18n,
   },
-  decorators: [StyleDecorator, ThemeDecorator(Theme.DEFAULT), RouterDecorator, StoreDecorator],
+  globals: {
+    locale: 'en',
+    locales: {
+      en: 'English',
+      ru: 'Русский',
+    },
+  },
+  decorators: [
+    StyleDecorator,
+    ThemeDecorator(Theme.DEFAULT),
+    RouterDecorator,
+    StoreDecorator,
+  ],
 };
 
 export default preview;
