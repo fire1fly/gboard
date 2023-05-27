@@ -4,6 +4,7 @@ import { AppLink, AppLinkTheme } from 'shared/ui/AppLink';
 import { useTranslation } from 'react-i18next';
 import { Button, ButtonSize, ButtonTheme } from 'shared/ui/Button';
 import { Modal } from 'shared/ui/Modal';
+import { LoginModal } from 'features/AuthByUsername';
 import cls from './Navbar.module.scss';
 
 interface NavbarProps {
@@ -15,8 +16,11 @@ export const Navbar: FC<NavbarProps> = ({ className }) => {
 
   const [isAuthModal, setIsAuthModal] = useState(false);
 
-  const onToggleModal = useCallback(() => {
-    setIsAuthModal((prev) => !prev);
+  const onCloseModal = useCallback(() => {
+    setIsAuthModal(false);
+  }, []);
+  const onOpenModal = useCallback(() => {
+    setIsAuthModal(true);
   }, []);
 
   return (
@@ -25,13 +29,11 @@ export const Navbar: FC<NavbarProps> = ({ className }) => {
         <Button
           theme={ButtonTheme.OUTLINE}
           size={ButtonSize.S}
-          onClick={onToggleModal}
+          onClick={onOpenModal}
         >
           {t('signIn_label')}
         </Button>
-        <Modal isOpen={isAuthModal} onClose={onToggleModal}>
-          {t('signIn_label')}
-        </Modal>
+        <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />
       </div>
     </div>
   );
