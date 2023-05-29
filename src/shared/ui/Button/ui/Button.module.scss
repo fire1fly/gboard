@@ -1,6 +1,11 @@
 .Button {
   cursor: pointer;
   color: var(--bg-color);
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
 }
 
 .clear {
