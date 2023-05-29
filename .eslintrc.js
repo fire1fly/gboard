@@ -41,11 +41,11 @@ module.exports = {
     'linebreak-style': [0],
     'i18next/no-literal-string': ['error', {
       markupOnly: true,
-      ignoreAttribute: ['data-testid', 'to'],
+      ignoreAttribute: ['data-testid', 'to', 'tag'],
     }],
     'max-len': ['error', {
       ignoreComments: true,
-      code: 100,
+      code: 120,
     }],
     'import/no-extraneous-dependencies': ['error', {
       devDependencies: true,
