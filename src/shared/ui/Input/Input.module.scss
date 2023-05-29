@@ -15,6 +15,10 @@
   background: transparent;
   font: var(--font-s);
   transition: 0.3s;
+
+  &:hover {
+    cursor: text;
+  }
 }
 
 .InputFieldWithoutLabel {
