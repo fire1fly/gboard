@@ -8,6 +8,9 @@ const meta: Meta<typeof Button> = {
   title: 'shared/Button',
   component: Button,
   tags: ['autodocs'],
+  args: {
+    disabled: false,
+  },
 };
 
 export default meta;
@@ -43,6 +46,15 @@ export const PrimaryDark: Story = {
   decorators: [ThemeDecorator(Theme.DARK)],
 };
 
+export const PrimaryDisabled: Story = {
+  args: {
+    theme: ButtonTheme.PRIMARY,
+    children: 'Button',
+    disabled: true,
+  },
+  decorators: [ThemeDecorator(Theme.DEFAULT)],
+};
+
 export const Outline: Story = {
   args: {
     theme: ButtonTheme.OUTLINE,
@@ -62,7 +74,7 @@ export const SquareSizeM: Story = {
     theme: ButtonTheme.OUTLINE,
     square: true,
     size: ButtonSize.M,
-    children: '>',
+    children: '+',
   },
 };
 export const SquareSizeL: Story = {
@@ -70,7 +82,7 @@ export const SquareSizeL: Story = {
     theme: ButtonTheme.OUTLINE,
     square: true,
     size: ButtonSize.L,
-    children: '>',
+    children: '+',
   },
 };
 export const SquareSizeXL: Story = {
@@ -78,6 +90,6 @@ export const SquareSizeXL: Story = {
     theme: ButtonTheme.OUTLINE,
     square: true,
     size: ButtonSize.XL,
-    children: '>',
+    children: '+',
   },
 };
