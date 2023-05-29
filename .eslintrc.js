@@ -47,9 +47,7 @@ module.exports = {
       ignoreComments: true,
       code: 120,
     }],
-    'import/no-extraneous-dependencies': ['error', {
-      devDependencies: true,
-    }],
+    'import/no-extraneous-dependencies': 'off',
     'jsx-a11y/no-static-element-interactions': 'off',
     'jsx-a11y/click-events-have-key-events': 'off',
     'no-undef': ['warn'],
