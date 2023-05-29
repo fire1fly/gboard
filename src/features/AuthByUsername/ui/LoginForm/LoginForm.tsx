@@ -1,27 +1,40 @@
-import { FC, useState } from 'react';
+import {
+  FC, memo, useCallback, useState,
+} from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Button, ButtonSize, ButtonTheme } from 'shared/ui/Button';
 import { Input } from 'shared/ui/Input/Input';
+import { useDispatch, useSelector } from 'react-redux';
+import { loginByUsername } from 'features/AuthByUsername/model/services/loginByUsername/loginByUsername';
+import { Text, TextColor } from 'shared/ui/Text/Text';
 import cls from './LoginForm.module.scss';
+import { loginActions } from '../../model/slice/loginSlice';
+import { getLoginState } from '../../model/selectors/getLoginState/getLoginState';
 
 interface LoginFormProps {
   className?: string;
 }
 
-export const LoginForm: FC<LoginFormProps> = ({ className }) => {
+export const LoginForm: FC<LoginFormProps> = memo(({ className }) => {
   const { t } = useTranslation();
 
-  // temp, for testing!!!
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+  const dispatch = useDispatch();
+  const {
+    username, password, error, isLoading,
+  } = useSelector(getLoginState);
 
-  const onChangeUsername = (value: string) => {
-    setUsername(value);
-  };
-  const onChangePassword = (value: string) => {
-    setPassword(value);
-  };
+  const onChangeUsername = useCallback((value: string) => {
+    dispatch(loginActions.setUsername(value));
+  }, [dispatch]);
+
+  const onChangePassword = useCallback((value: string) => {
+    dispatch(loginActions.setPassword(value));
+  }, [dispatch]);
+
+  const onLogin = useCallback(() => {
+    dispatch(loginByUsername({ username, password }));
+  }, [dispatch, username, password]);
 
   return (
     <div className={classNames(cls.LoginForm, className)}>
@@ -33,6 +46,7 @@ export const LoginForm: FC<LoginFormProps> = ({ className }) => {
         autofocus
         outputMessage=""
         className={cls.input}
+        isError={!!error}
       />
       <Input
         type="password"
@@ -40,16 +54,26 @@ export const LoginForm: FC<LoginFormProps> = ({ className }) => {
         onChange={onChangePassword}
         value={password}
         className={cls.input}
-        isError
-        outputMessage={t('form:output:incorrectData')}
+        isError={!!error}
       />
+      {
+        error
+          && (
+            <div>
+              <Text tag="span" color={TextColor.error}>{t('form:output:incorrectData')}</Text>
+            </div>
+          )
+      }
       <Button
+        type="submit"
         theme={ButtonTheme.PRIMARY}
         size={ButtonSize.M}
         className={cls.loginBtn}
+        onClick={onLogin}
+        disabled={isLoading}
       >
         {t('form:signin')}
       </Button>
     </div>
   );
-};
+});
