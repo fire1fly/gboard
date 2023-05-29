@@ -11,7 +11,7 @@ interface CounterProps {
 
 export const Counter: FC<CounterProps> = ({ className }) => {
   const dispatch = useDispatch();
-  const counter = useSelector((state: StateSchema) => getCounterValue(state));
+  const counter = useSelector(getCounterValue);
 
   const increment = () => {
     dispatch(counterActions.increment());

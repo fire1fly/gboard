@@ -1,5 +1,28 @@
 {
+  "ErrorPage": {
+    "title": "title"
+  },
+  "MainPage": {
+    "title": "title"
+  },
+  "NavbarLinks": {
+    "about": "about",
+    "main": "main"
+  },
   "PageError": "PageError",
+  "about": {
+    "title": "title"
+  },
+  "form": {
+    "label": {
+      "name": "name",
+      "password": "password"
+    },
+    "output": {
+      "incorrectData": "incorrectData"
+    },
+    "signin": "signin"
+  },
   "linkToMainPage": "linkToMainPage",
   "notFound": "notFound",
   "pageTitle:about": "pageTitle:about",
@@ -7,6 +30,9 @@
   "toggleButton": "toggleButton",
   "toggleLangButton": "toggleLangButton",
   "toggleLangButtonShort": "toggleLangButtonShort",
+  "translation": {
+    "linkToMainPage": "linkToMainPage"
+  },
   "Главная страница": "Главная страница",
   "Главная страницаsdfsdf": "Главная страницаsdfsdf",
   "Кнопка переключения языка": "Кнопка переключения языка",
