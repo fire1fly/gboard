@@ -24,6 +24,7 @@
     "signin": ""
   },
   "linkToMainPage": "linkToMainPage",
+  "logout_label": "",
   "notFound": "notFound",
   "pageTitle:about": "pageTitle:about",
   "signIn_label": "signIn_label",

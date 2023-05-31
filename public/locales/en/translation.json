@@ -23,7 +23,12 @@
       "password": "Password"
     },
     "output": {
-      "incorrectData": "Incorrect data"
+      "incorrectData": "Incorrect data",
+      "incorrectUsernameOrPassword": "Invalid username or password"
     }
-  }
+  },
+  "errors": {
+    "userNotLogin": "The user is not logged in"
+  },
+  "logout_label": "Log out"
 }

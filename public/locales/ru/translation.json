@@ -23,7 +23,12 @@
       "password": "Пароль"
     },
     "output": {
-      "incorrectData": "Неккоректные данные"
+      "incorrectData": "Неккоректные данные",
+      "incorrectUsernameOrPassword": "Неверный логин или пароль"
     }
-  }
+  },
+  "errors": {
+    "userNotLogin": "Пользователь не авторизован"
+  },
+  "logout_label": "Выйти"
 }

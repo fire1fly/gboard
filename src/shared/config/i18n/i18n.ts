@@ -9,7 +9,7 @@ i18n
   .use(LanguageDetector)
   .use(initReactI18next)
   .init({
-    fallbackLng: 'ru',
+    fallbackLng: 'en',
     debug: __IS_DEV__,
     interpolation: {
       escapeValue: false,
@@ -18,6 +18,9 @@ i18n
       loadPath: '/locales/{{lng}}/{{ns}}.json',
     },
     keySeparator: ':',
+    react: {
+      useSuspense: false,
+    },
   });
 
 export default i18n;
