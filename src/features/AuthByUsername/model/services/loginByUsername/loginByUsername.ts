@@ -1,6 +1,8 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { User } from 'entities/User';
+import { User, userActions } from 'entities/User';
 import axios from 'axios';
+import i18n from 'shared/config/i18n/i18n';
+import { LOCALSTORAGE_USER_KEY } from 'shared/const/localstorage';
 
 interface LoginByUsernameProps {
   username: string;
@@ -17,10 +19,14 @@ export const loginByUsername = createAsyncThunk<User, LoginByUsernameProps, { re
         throw new Error();
       }
 
+      // Imitation of authorization, because there is no real backend
+      localStorage.setItem(LOCALSTORAGE_USER_KEY, JSON.stringify(response.data));
+      thunkAPI.dispatch(userActions.setAuthData(response.data));
+
       return response.data;
     } catch (e) {
       console.log(e);
-      return thunkAPI.rejectWithValue('error');
+      return thunkAPI.rejectWithValue(i18n.t('form:output:incorrectUsernameOrPassword'));
     }
   },
 );

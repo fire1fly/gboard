@@ -59,8 +59,8 @@ export const LoginForm: FC<LoginFormProps> = memo(({ className }) => {
       {
         error
           && (
-            <div>
-              <Text tag="span" color={TextColor.error}>{t('form:output:incorrectData')}</Text>
+            <div className={cls.outputContainer}>
+              <Text tag="span" color={TextColor.error}>{error}</Text>
             </div>
           )
       }
