@@ -11,7 +11,10 @@ import { Text, TextColor } from 'shared/ui/Text/Text';
 import { ReduxStoreWithManager } from 'app/providers/StoreProvider/config/StateSchema';
 import cls from './LoginForm.module.scss';
 import { loginActions, loginReducer } from '../../model/slice/loginSlice';
-import { getLoginState } from '../../model/selectors/getLoginState/getLoginState';
+import { getLoginUsername } from '../../model/selectors/getLoginUsername/getLoginUsername';
+import { getLoginPassword } from '../../model/selectors/getLoginPassword/getLoginPassword';
+import { getLoginError } from '../../model/selectors/getLoginError/getLoginError';
+import { getLoginIsLoading } from '../../model/selectors/getLoginIsLoading/getLoginIsLoading';
 
 export interface LoginFormProps {
   className?: string;
@@ -23,17 +26,22 @@ const LoginForm: FC<LoginFormProps> = memo(({ className }) => {
   // temporary "as"
   const store = useStore() as ReduxStoreWithManager;
 
+  const username = useSelector(getLoginUsername);
+  const password = useSelector(getLoginPassword);
+  const error = useSelector(getLoginError);
+  const isLoading = useSelector(getLoginIsLoading);
+
   useEffect(() => {
     store.reducerManager.add('loginForm', loginReducer);
-
+    dispatch({ type: '@INIT loginForm reducer' });
     return () => {
       store.reducerManager.remove('loginForm');
+      dispatch({ type: '@DESTROY loginForm reducer' });
     };
-  }, [store.reducerManager]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
-  const {
-    username, password, error, isLoading,
-  } = useSelector(getLoginState);
+  console.log('error:', error);
 
   const onChangeUsername = useCallback((value: string) => {
     dispatch(loginActions.setUsername(value));
