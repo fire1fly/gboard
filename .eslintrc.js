@@ -41,7 +41,7 @@ module.exports = {
     'linebreak-style': [0],
     'i18next/no-literal-string': ['error', {
       markupOnly: true,
-      ignoreAttribute: ['data-testid', 'to', 'tag'],
+      ignoreAttribute: ['data-testid', 'to', 'tag', 'reducerKey'],
     }],
     'max-len': ['error', {
       ignoreComments: true,
@@ -53,6 +53,7 @@ module.exports = {
     'no-undef': ['warn'],
     'react-hooks/rules-of-hooks': 'error', // Checks rules of Hooks
     'react-hooks/exhaustive-deps': 'error', // Checks effect dependencies
+    'react/jsx-no-useless-fragment': 'warn',
     'global-require': 'off',
     'import/no-dynamic-require': 'off',
   },
