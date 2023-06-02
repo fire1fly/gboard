@@ -9,12 +9,17 @@ const meta: Meta<typeof LoginForm> = {
   title: 'features/LoginForm',
   component: LoginForm,
   tags: ['autodocs'],
-  decorators: [StoreDecorator({
-    loginForm: {
-      username: 'user',
-      password: 'example',
-    },
-  })],
+  decorators: [
+    StoreDecorator(
+      {
+        loginForm: {
+          username: 'user',
+          password: 'example',
+        },
+      },
+      {},
+    ),
+  ],
 };
 
 export default meta;
