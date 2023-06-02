@@ -9,11 +9,15 @@ const meta: Meta<typeof MainPage> = {
   title: 'pages/MainPage',
   component: MainPage,
   tags: ['autodocs'],
-  decorators: [StoreDecorator({
-    counter: {
-      value: 0,
-    },
-  })],
+  decorators: [
+    StoreDecorator(
+      {
+        counter: {
+          value: 0,
+        },
+      },
+    ),
+  ],
 };
 
 export default meta;

@@ -17,7 +17,6 @@ const meta: Meta<typeof LoginForm> = {
           password: 'example',
         },
       },
-      {},
     ),
   ],
 };
