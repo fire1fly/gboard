@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { useTheme } from 'shared/lib/useTheme';
+import { useTheme } from 'shared/lib/hooks/useTheme';
 
 import LightIcon from 'shared/assets/icons/theme-default.svg';
 import DarkIcon from 'shared/assets/icons/theme-dark.svg';

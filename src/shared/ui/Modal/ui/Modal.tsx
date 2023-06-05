@@ -3,7 +3,7 @@ import React, {
 } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Portal } from 'shared/ui/Protal/Portal';
-import { useTheme } from 'shared/lib/useTheme';
+import { useTheme } from 'shared/lib/hooks/useTheme';
 import cls from './Modal.module.scss';
 
 export interface ModalProps {
