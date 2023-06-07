@@ -26,6 +26,7 @@
   "linkToMainPage": "linkToMainPage",
   "logout_label": "logout_label",
   "notFound": "notFound",
+  "pageTitle": "pageTitle",
   "pageTitle:about": "pageTitle:about",
   "signIn_label": "signIn_label",
   "toggleButton": "toggleButton",

@@ -10,7 +10,8 @@
   "toggleButton": "Toggle",
   "NavbarLinks": {
     "main": "Main page",
-    "about": "About"
+    "about": "About",
+    "profile": "Profile"
   },
   "MainPage": {
     "title": "Main page"

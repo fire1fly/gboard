@@ -10,7 +10,8 @@
   "toggleButton": "Переключить",
   "NavbarLinks": {
     "main": "Главная",
-    "about": "О нас"
+    "about": "О нас",
+    "profile": "Профиль"
   },
   "MainPage": {
     "title": "Главная"
