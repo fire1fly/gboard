@@ -1,4 +1,6 @@
-import { ElementType, FC, HTMLAttributes } from 'react';
+import {
+  ElementType, FC, HTMLAttributes, memo,
+} from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './Text.module.scss';
 
@@ -31,7 +33,7 @@ interface TextProps extends HTMLAttributes<HTMLElement> {
   striketrough?: boolean;
 }
 
-export const Text: FC<TextProps> = (props) => {
+export const Text: FC<TextProps> = memo((props) => {
   const {
     children,
     className,
@@ -59,4 +61,4 @@ export const Text: FC<TextProps> = (props) => {
       {children}
     </Tag>
   );
-};
+});

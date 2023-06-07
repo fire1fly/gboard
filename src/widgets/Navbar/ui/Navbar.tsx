@@ -1,4 +1,6 @@
-import { FC, useCallback, useState } from 'react';
+import {
+  FC, memo, useCallback, useState,
+} from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { Button, ButtonSize, ButtonTheme } from 'shared/ui/Button';
@@ -11,7 +13,7 @@ interface NavbarProps {
   className?: string;
 }
 
-export const Navbar: FC<NavbarProps> = ({ className }) => {
+export const Navbar: FC<NavbarProps> = memo(({ className }) => {
   const { t } = useTranslation();
 
   const dispatch = useDispatch();
@@ -60,4 +62,4 @@ export const Navbar: FC<NavbarProps> = ({ className }) => {
       </div>
     </div>
   );
-};
+});
