@@ -22,7 +22,7 @@ i18n.use(initReactI18next)
   .init({
     lng: 'en',
     fallbackLng: 'en',
-    defaultNS: 'translation',
+    // defaultNS: 'translation',
     ns,
     interpolation: { escapeValue: false },
     react: { useSuspense: false },
