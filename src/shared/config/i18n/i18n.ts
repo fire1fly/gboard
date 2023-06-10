@@ -19,7 +19,7 @@ i18n
     },
     keySeparator: ':',
     react: {
-      useSuspense: false,
+      useSuspense: true,
     },
   });
 

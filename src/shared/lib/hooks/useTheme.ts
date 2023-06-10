@@ -14,9 +14,12 @@ export function useTheme() {
 
   const toggleTheme = () => {
     const newTheme = theme === Theme.DEFAULT ? Theme.DARK : Theme.DEFAULT;
-    setTheme(newTheme);
+    setTheme?.(newTheme);
     localStorage.setItem(LOCAL_STORAGE_THEME_KEY, newTheme);
   };
 
-  return { theme, toggleTheme };
+  return {
+    theme: theme || Theme.DEFAULT,
+    toggleTheme,
+  };
 }
