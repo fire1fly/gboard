@@ -21,7 +21,8 @@
     "signin": "Log in",
     "label": {
       "name": "Name",
-      "password": "Password"
+      "password": "Password",
+      "lastname": "Surname"
     },
     "output": {
       "incorrectData": "Incorrect data",
@@ -29,7 +30,11 @@
     }
   },
   "errors": {
-    "userNotLogin": "The user is not logged in"
+    "userNotLogin": "The user is not logged in",
+    "profileLoading": "Profile loading error"
   },
-  "logout_label": "Log out"
+  "logout_label": "Log out",
+  "buttonLabel": {
+    "edit": "Edit"
+  }
 }

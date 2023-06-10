@@ -1,7 +1,6 @@
 {
+  "label:lastname": "label:lastname",
   "label:name": "label:name",
   "label:password": "label:password",
-  "output:incorrectData": "",
-  "output:incorrectUsernameOrPassword": "",
   "signin": "signin"
 }

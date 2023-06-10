@@ -21,7 +21,8 @@
     "signin": "Войти",
     "label": {
       "name": "Имя",
-      "password": "Пароль"
+      "password": "Пароль",
+      "lastname": "Фамилия"
     },
     "output": {
       "incorrectData": "Неккоректные данные",
@@ -29,7 +30,11 @@
     }
   },
   "errors": {
-    "userNotLogin": "Пользователь не авторизован"
+    "userNotLogin": "Пользователь не авторизован",
+    "profileLoading": "Profile loading error"
   },
-  "logout_label": "Выйти"
+  "logout_label": "Выйти",
+  "buttonLabel": {
+    "edit": "Редактировать"
+  }
 }
