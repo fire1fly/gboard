@@ -50,7 +50,7 @@ module.exports = {
     'import/no-extraneous-dependencies': 'off',
     'jsx-a11y/no-static-element-interactions': 'off',
     'jsx-a11y/click-events-have-key-events': 'off',
-    'no-undef': ['warn'],
+    'no-undef': 'off',
     'react-hooks/rules-of-hooks': 'error', // Checks rules of Hooks
     'react-hooks/exhaustive-deps': 'error', // Checks effect dependencies
     'react/jsx-no-useless-fragment': 'warn',
