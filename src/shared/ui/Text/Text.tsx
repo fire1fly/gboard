@@ -1,7 +1,7 @@
 import {
   ElementType, FC, HTMLAttributes, memo,
 } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
+import { ClassnamesMods, classNames } from 'shared/lib/classNames/classNames';
 import cls from './Text.module.scss';
 
 export enum TextSize {
@@ -47,7 +47,7 @@ export const Text: FC<TextProps> = memo((props) => {
     ...otherProps
   } = props;
 
-  const mods: Record<string, boolean> = {
+  const mods: ClassnamesMods = {
     [cls[size]]: true,
     [cls[color]]: true,
     [cls.bold]: bold,

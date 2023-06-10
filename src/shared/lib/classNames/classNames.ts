@@ -1,4 +1,8 @@
-export function classNames(...params: (string | { [key: string]: boolean })[]): string {
+export type ClassnamesMods = { [key: string]: boolean | undefined }
+
+export function classNames(
+  ...params: (undefined | string | ClassnamesMods)[]
+): string {
   const classes: string[] = [];
 
   params.forEach((param) => {

@@ -1,7 +1,7 @@
 import {
   FC, InputHTMLAttributes, memo, useCallback, useEffect, useRef, useState,
 } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
+import { ClassnamesMods, classNames } from 'shared/lib/classNames/classNames';
 import cls from './Input.module.scss';
 
 type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange'>
@@ -63,7 +63,7 @@ export const Input: FC<InputProps> = memo((props) => {
     }
   }, [autofocus, checkFilled]);
 
-  const clsMods: Record<string, boolean> = {
+  const clsMods: ClassnamesMods = {
     [cls.InputFieldFocused]: isFocused,
     [cls.InputFieldFilled]: isFilled,
     [cls.InputFieldWithoutLabel]: !label,

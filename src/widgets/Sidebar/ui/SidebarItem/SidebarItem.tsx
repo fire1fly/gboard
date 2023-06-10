@@ -16,7 +16,7 @@ export const SidebarItem: FC<SidebarItemProps> = memo(({ item, collapsed }) => {
     label,
     text,
     icon: Icon,
-  } = item;
+  } = item as SidebarItemType;
 
   const { t } = useTranslation();
 
