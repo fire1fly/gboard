@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Button, ButtonSize, ButtonTheme } from 'shared/ui/Button';
 import { Input } from 'shared/ui/Input/Input';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { loginByUsername } from 'features/AuthByUsername/model/services/loginByUsername/loginByUsername';
 import { Text, TextColor } from 'shared/ui/Text/Text';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
@@ -19,7 +19,7 @@ import { getLoginIsLoading } from '../../model/selectors/getLoginIsLoading/getLo
 
 export interface LoginFormProps {
   className?: string;
-  onSuccess: () => void;
+  onSuccess?: () => void;
 }
 
 const initialReducers: ReducersList = {
@@ -47,7 +47,7 @@ const LoginForm: FC<LoginFormProps> = memo((props) => {
   const onLogin = useCallback(async () => {
     const action = await dispatch(loginByUsername({ username, password }));
     if (action.meta.requestStatus === 'fulfilled') {
-      onSuccess();
+      onSuccess?.();
     }
   }, [dispatch, username, password, onSuccess]);
 

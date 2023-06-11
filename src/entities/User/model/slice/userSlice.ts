@@ -18,7 +18,7 @@ export const userSlice = createSlice({
       state.authData = action.payload;
     });
     builder.addCase(logout.fulfilled, (state) => {
-      state.authData = null;
+      state.authData = undefined;
     });
   },
 });
