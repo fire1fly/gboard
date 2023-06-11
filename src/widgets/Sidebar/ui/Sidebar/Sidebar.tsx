@@ -5,7 +5,7 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher';
 import { LangSwitcher } from 'shared/ui/LangSwitcher';
 import { useTranslation } from 'react-i18next';
-import { Button, ButtonSize } from 'shared/ui/Button';
+import { Button, ButtonSize, ButtonTheme } from 'shared/ui/Button';
 import IconArrowLeft from 'shared/assets/icons/icon-angle-bracket-left.svg';
 import { SidebarItemList } from '../../model/items';
 import cls from './Sidebar.module.scss';
@@ -42,6 +42,7 @@ export const Sidebar: FC<SidebarProps> = memo(({ className }) => {
         type="button"
         onClick={onToggle}
         square
+        theme={ButtonTheme.CLEAR}
         size={ButtonSize.XL}
         className={cls.collapseBtn}
       >
