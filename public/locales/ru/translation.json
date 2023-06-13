@@ -31,10 +31,13 @@
   },
   "errors": {
     "userNotLogin": "Пользователь не авторизован",
-    "profileLoading": "Profile loading error"
+    "profileLoading": "Ошибка загрузки профиля",
+    "reload": "Перезагрузите страницу"
   },
   "logout_label": "Выйти",
   "buttonLabel": {
-    "edit": "Редактировать"
+    "edit": "Редактировать",
+    "cancel": "Отменить",
+    "save": "Сохранить"
   }
 }

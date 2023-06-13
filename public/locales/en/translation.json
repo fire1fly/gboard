@@ -31,10 +31,13 @@
   },
   "errors": {
     "userNotLogin": "The user is not logged in",
-    "profileLoading": "Profile loading error"
+    "profileLoading": "Profile loading error",
+    "reload": "Reload page"
   },
   "logout_label": "Log out",
   "buttonLabel": {
-    "edit": "Edit"
+    "edit": "Edit",
+    "cancel": "Cancel",
+    "save": "Save"
   }
 }
