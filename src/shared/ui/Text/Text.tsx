@@ -22,11 +22,18 @@ export enum TextColor {
   info = 'color-info',
 }
 
+export enum TextAlign {
+  LEFT = 'align-left',
+  CENTER = 'align-center',
+  RIGHT = 'align-right',
+}
+
 interface TextProps extends HTMLAttributes<HTMLElement> {
   className?: string;
   tag: ElementType;
   color?: TextColor;
   size?: TextSize;
+  align?: TextAlign;
   bold?: boolean;
   italic?: boolean;
   underline?: boolean;
@@ -40,6 +47,7 @@ export const Text: FC<TextProps> = memo((props) => {
     tag: Tag,
     size = TextSize.M,
     color = TextColor.primary,
+    align = TextAlign.LEFT,
     bold,
     italic,
     underline,
@@ -50,6 +58,7 @@ export const Text: FC<TextProps> = memo((props) => {
   const mods: ClassnamesMods = {
     [cls[size]]: true,
     [cls[color]]: true,
+    [cls[align]]: true,
     [cls.bold]: bold,
     [cls.italic]: italic,
     [cls.underline]: underline,
