@@ -1,48 +1,87 @@
 import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { useSelector } from 'react-redux';
-import { Text, TextSize } from 'shared/ui/Text/Text';
-import { Button, ButtonSize, ButtonTheme } from 'shared/ui/Button';
+import {
+  Text, TextAlign, TextColor, TextSize,
+} from 'shared/ui/Text/Text';
 import { Input } from 'shared/ui/Input/Input';
+import { Loader } from 'shared/ui/Loader';
 import cls from './ProfileCard.module.scss';
-import { getProfileData } from '../../model/selectors/getProfileData/getProfileData';
-import { getProfileError } from '../../model/selectors/getProfileError/getProfileError';
-import { getProfileIsLoading } from '../../model/selectors/getProfileIsLoading/getProfileIsLoading';
+import { Profile } from '../../model/types/profile';
 
 interface ProfileCardProps {
   className?: string;
+  data?: Profile;
+  error?: string;
+  isLoading?: boolean;
+  readonly?: boolean;
+  onChageFirstname?: (value: string) => void;
+  onChageLastname?: (value: string) => void;
 }
 
-export const ProfileCard: FC<ProfileCardProps> = ({ className }) => {
+export const ProfileCard: FC<ProfileCardProps> = (props) => {
+  const {
+    className,
+    data,
+    error,
+    isLoading,
+    readonly,
+    onChageFirstname,
+    onChageLastname,
+  } = props;
+
   const { t } = useTranslation();
 
-  const data = useSelector(getProfileData);
-  const isLoading = useSelector(getProfileIsLoading);
-  const error = useSelector(getProfileError);
+  if (isLoading) {
+    return (
+      <div className={classNames(cls.ProfileCard, className)}>
+        <Loader className={cls.loader} />
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className={classNames(cls.ProfileCard, className)}>
+        <Text
+          tag="h2"
+          bold
+          color={TextColor.error}
+          size={TextSize.L}
+          align={TextAlign.CENTER}
+          className={cls.error}
+        >
+          {t('errors:profileLoading')}
+        </Text>
+        <Text
+          tag="p"
+          color={TextColor.error}
+          size={TextSize.M}
+          align={TextAlign.CENTER}
+          className={cls.error}
+        >
+          {t('errors:reload')}
+        </Text>
+      </div>
+    );
+  }
 
   return (
     <div className={classNames(cls.ProfileCard, className)}>
-      <div className={cls.header}>
-        <Text tag="h1" size={TextSize.L} bold>{t('profile:pageTitle')}</Text>
-        <Button
-          theme={ButtonTheme.PRIMARY}
-          size={ButtonSize.M}
-          className={cls.btn_edit}
-        >
-          {t('buttonLabel:edit')}
-        </Button>
-      </div>
       <div className={cls.data}>
         <Input
           value={data?.firstname}
           label={t('form:label:name')}
           className={cls.field}
+          onChange={onChageFirstname}
+          readonly={readonly}
         />
         <Input
           value={data?.lastname}
           label={t('form:label:lastname')}
           className={cls.field}
+          onChange={onChageLastname}
+          readonly={readonly}
         />
       </div>
     </div>
