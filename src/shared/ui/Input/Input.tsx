@@ -4,7 +4,7 @@ import {
 import { ClassnamesMods, classNames } from 'shared/lib/classNames/classNames';
 import cls from './Input.module.scss';
 
-type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange'>
+type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'readOnly'>
 
 interface InputProps extends HTMLInputProps {
   className?: string;
@@ -14,6 +14,7 @@ interface InputProps extends HTMLInputProps {
   label?: string;
   outputMessage?: string;
   isError?: boolean;
+  readonly?: boolean;
 }
 
 export const Input: FC<InputProps> = memo((props) => {
@@ -26,6 +27,7 @@ export const Input: FC<InputProps> = memo((props) => {
     autofocus,
     isError,
     outputMessage,
+    readonly,
     ...otherProps
   } = props;
 
@@ -46,10 +48,12 @@ export const Input: FC<InputProps> = memo((props) => {
     checkFilled();
   };
 
-  const onFocus = () => {
-    setIsFocused(true);
-    refInput.current?.focus();
-  };
+  const onFocus = useCallback(() => {
+    if (!readonly) {
+      setIsFocused(true);
+      refInput.current?.focus();
+    }
+  }, [readonly]);
 
   const onBlur = () => {
     setIsFocused(false);
@@ -61,13 +65,14 @@ export const Input: FC<InputProps> = memo((props) => {
     if (autofocus) {
       onFocus();
     }
-  }, [autofocus, checkFilled]);
+  }, [autofocus, checkFilled, onFocus]);
 
   const clsMods: ClassnamesMods = {
     [cls.InputFieldFocused]: isFocused,
     [cls.InputFieldFilled]: isFilled,
     [cls.InputFieldWithoutLabel]: !label,
     [cls.InputFieldError]: isError,
+    [cls.InputFieldReadonly]: readonly,
   };
 
   return (
@@ -89,6 +94,7 @@ export const Input: FC<InputProps> = memo((props) => {
           onChange={onChangeHandler}
           onFocus={onFocus}
           onBlur={onBlur}
+          readOnly={readonly}
           data-testid="input"
         />
       </div>

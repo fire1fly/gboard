@@ -77,3 +77,13 @@ input {
     color: var(--color-error-main);
   }
 }
+
+.InputFieldReadonly {
+  &:hover {
+    cursor: default;
+  }
+
+  input {
+    cursor: default;
+  }
+}
