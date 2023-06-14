@@ -1,4 +1,6 @@
 {
+  "label:age": "label:age",
+  "label:city": "label:city",
   "label:lastname": "label:lastname",
   "label:name": "label:name",
   "label:password": "label:password",

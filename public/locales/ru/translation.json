@@ -22,7 +22,9 @@
     "label": {
       "name": "Имя",
       "password": "Пароль",
-      "lastname": "Фамилия"
+      "lastname": "Фамилия",
+      "age": "Возраст",
+      "city": "Город"
     },
     "output": {
       "incorrectData": "Неккоректные данные",

@@ -22,7 +22,9 @@
     "label": {
       "name": "Name",
       "password": "Password",
-      "lastname": "Surname"
+      "lastname": "Surname",
+      "age": "Age",
+      "city": "City"
     },
     "output": {
       "incorrectData": "Incorrect data",
