@@ -4,7 +4,7 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { Button, ButtonSize, ButtonTheme } from 'shared/ui/Button';
 import { Text, TextSize } from 'shared/ui/Text/Text';
 import { useSelector } from 'react-redux';
-import { getProfileReadonly, profileActions } from 'entities/Profile';
+import { getProfileReadonly, profileActions, updateProfileData } from 'entities/Profile';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import cls from './ProfilePageHeader.module.scss';
 
@@ -27,8 +27,8 @@ export const ProfilePageHeader: FC<ProfilePageHeaderProps> = ({ className }) => 
   }, [dispatch]);
 
   const onSave = useCallback(() => {
-    // TODO: write saveProfileData service
-  }, []);
+    dispatch(updateProfileData());
+  }, [dispatch]);
 
   return (
     <div className={classNames(cls.ProfilePageHeader, className)}>

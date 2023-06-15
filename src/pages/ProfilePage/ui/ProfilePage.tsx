@@ -5,7 +5,6 @@ import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/Dynamic
 import {
   ProfileCard,
   fetchProfileData,
-  getProfileData,
   getProfileError,
   getProfileForm,
   getProfileIsLoading,
@@ -15,6 +14,8 @@ import {
 } from 'entities/Profile';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 import { useSelector } from 'react-redux';
+import { Country } from 'shared/const/common';
+import { Currency } from 'entities/Currency';
 import cls from './ProfilePage.module.scss';
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
 
@@ -40,11 +41,30 @@ const ProfilePage: FC<ProfilePageProps> = ({ className }) => {
     dispatch(fetchProfileData());
   }, [dispatch]);
 
-  const onChageFirstname = useCallback((value?: string) => {
+  const onChangeFirstname = useCallback((value?: string) => {
     dispatch(profileActions.updateProfile({ firstname: value || '' }));
   }, [dispatch]);
-  const onChageLastname = useCallback((value?: string) => {
+  const onChangeLastname = useCallback((value?: string) => {
     dispatch(profileActions.updateProfile({ lastname: value || '' }));
+  }, [dispatch]);
+  const onChangeUsername = useCallback((value?: string) => {
+    dispatch(profileActions.updateProfile({ username: value || '' }));
+  }, [dispatch]);
+  const onChangeAvatar = useCallback((value?: string) => {
+    dispatch(profileActions.updateProfile({ avatar: value || '' }));
+  }, [dispatch]);
+  const onChangeAge = useCallback((value?: string) => {
+    const validatedValue = value?.replace(/\D+/gm, '');
+    dispatch(profileActions.updateProfile({ age: Number(validatedValue) || 0 }));
+  }, [dispatch]);
+  const onChangeCity = useCallback((value?: string) => {
+    dispatch(profileActions.updateProfile({ city: value || '' }));
+  }, [dispatch]);
+  const onChangeCountry = useCallback((value?: Country) => {
+    dispatch(profileActions.updateProfile({ country: value }));
+  }, [dispatch]);
+  const onChangeCurrency = useCallback((value?: Currency) => {
+    dispatch(profileActions.updateProfile({ currency: value }));
   }, [dispatch]);
 
   return (
@@ -56,8 +76,14 @@ const ProfilePage: FC<ProfilePageProps> = ({ className }) => {
           error={error}
           isLoading={isLoading}
           readonly={readonly}
-          onChageFirstname={onChageFirstname}
-          onChageLastname={onChageLastname}
+          onChangeFirstname={onChangeFirstname}
+          onChangeLastname={onChangeLastname}
+          onChangeUsername={onChangeUsername}
+          onChangeAvatar={onChangeAvatar}
+          onChangeAge={onChangeAge}
+          onChangeCity={onChangeCity}
+          onChangeCountry={onChangeCountry}
+          onChangeCurrency={onChangeCurrency}
         />
       </div>
     </DynamicModuleLoader>
