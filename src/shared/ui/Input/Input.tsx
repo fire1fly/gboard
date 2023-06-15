@@ -96,6 +96,7 @@ export const Input: FC<InputProps> = memo((props) => {
           onBlur={onBlur}
           readOnly={readonly}
           data-testid="input"
+          {...otherProps}
         />
       </div>
       {
