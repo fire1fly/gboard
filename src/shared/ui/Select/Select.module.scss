@@ -1,0 +1,111 @@
+.SelectWrapper {
+  width: 100%;
+}
+
+.SelectField {
+  position: relative;
+  border: 1px solid var(--field-border-color);
+  border-radius: 8px;
+  height: 55px;
+  width: 100%;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 20px;
+  padding-bottom: 4px;
+  background: transparent;
+  font: var(--font-s);
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.SelectFieldWithoutLabel {
+  padding-top: 4px;
+}
+
+.SelectLabel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: var(--secondary-color);
+  transition: 0.3s;
+  transform: translate(12px, 15px) scale(1);
+}
+
+.SelectOutputMessage {
+  padding-left: 12px;
+  padding-right: 12px;
+  font: var(--font-xs);
+  color: var(--primary-color);
+}
+
+.SelectFieldFocused {
+  border-color: transparent;
+  box-shadow: 0 0 0 2px var(--color-indigo-main);
+
+  .SelectLabel {
+    transform: translate(6px, 4px) scale(0.85);
+    color: var(--color-indigo-main);
+  }
+
+  .SelectListWrapper {
+    visibility: visible;
+    opacity: 1;
+    z-index: 1;
+  }
+}
+
+.SelectFieldFilled {
+  .SelectLabel {
+    transform: translate(6px, 4px) scale(0.85);
+  }
+}
+
+.SelectFieldError {
+  border-color: transparent;
+  box-shadow: 0 0 0 2px var(--color-error-main);
+
+  .SelectLabel {
+    color: var(--color-error-main);
+  }
+
+  & + .SelectOutputMessage {
+    color: var(--color-error-main);
+  }
+}
+
+.SelectFieldReadonly {
+  &:hover {
+    cursor: default;
+  }
+}
+
+.SelectListWrapper {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  width: 100%;
+  visibility: hidden;
+  opacity: 0;
+  z-index: -1;
+  transition: 0.3s ease-in-out;
+}
+
+.SelectList {
+  border: 1px solid var(--field-border-color);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--bg-color);
+
+  &Item {
+    height: 55px;
+    padding: 0 12px;
+    display: flex;
+    align-items: center;
+    color: var(--primary-color);
+    cursor: pointer;
+
+    &:hover {
+      background: var(--field-hover-color);
+    }
+  }
+}
