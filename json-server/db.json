@@ -27,8 +27,12 @@
   ],
   "profile": {
     "firstname": "Dany",
-    "lastname": "Seiasd",
+    "lastname": "Sei",
     "age": 25,
-    "city": "Ostin"
+    "city": "Ostin",
+    "username": "fire1fly",
+    "avatar": "https://avatars.githubusercontent.com/u/56827297",
+    "country": "Armenia",
+    "currency": "AMD"
   }
 }

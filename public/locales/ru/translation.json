@@ -24,7 +24,11 @@
       "password": "Пароль",
       "lastname": "Фамилия",
       "age": "Возраст",
-      "city": "Город"
+      "city": "Город",
+      "username": "Никнейм",
+      "avatarUrl": "Ссылка на аватарку",
+      "currency": "Валюта",
+      "country": "Страна"
     },
     "output": {
       "incorrectData": "Неккоректные данные",

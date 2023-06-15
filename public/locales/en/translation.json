@@ -24,7 +24,11 @@
       "password": "Password",
       "lastname": "Surname",
       "age": "Age",
-      "city": "City"
+      "city": "City",
+      "username": "Username",
+      "avatarUrl": "Avatar URL",
+      "currency": "Currency",
+      "country": "Country"
     },
     "output": {
       "incorrectData": "Incorrect data",

@@ -1,9 +1,13 @@
 {
   "label:age": "label:age",
+  "label:avatarUrl": "label:avatarUrl",
   "label:city": "label:city",
+  "label:country": "label:country",
+  "label:currency": "",
   "label:lastname": "label:lastname",
   "label:name": "label:name",
   "label:password": "label:password",
+  "label:username": "label:username",
   "output:incorrectUsernameOrPassword": "",
   "signin": "signin"
 }
