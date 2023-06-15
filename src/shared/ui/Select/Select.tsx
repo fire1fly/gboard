@@ -9,15 +9,15 @@ export interface SelectOption {
   content: string;
 }
 
-interface SelectProps extends Omit<HTMLAttributes<HTMLElement>, 'onChange'> {
+export interface SelectProps extends Omit<HTMLAttributes<HTMLElement>, 'onChange'> {
   className?: string;
   value?: string;
-  onChange?: (value: string) => void;
+  onChange?: (value: any) => void;
   label?: string;
   outputMessage?: string;
   isError?: boolean;
   readonly?: boolean;
-  options: SelectOption[]
+  options?: SelectOption[]
 }
 
 export const Select: FC<SelectProps> = memo((props) => {
@@ -63,7 +63,7 @@ export const Select: FC<SelectProps> = memo((props) => {
 
   const onFocus = useCallback(() => {
     if (!readonly) {
-      setIsFocused(true);
+      setIsFocused((prev) => !prev);
     }
   }, [readonly]);
 
