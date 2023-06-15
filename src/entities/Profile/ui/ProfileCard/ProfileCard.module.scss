@@ -6,7 +6,17 @@
   padding: 20px;
 }
 
+.editing {
+  border: 1px solid var(--color-warning-main);
+}
+
 .loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatarWrapper {
   display: flex;
   align-items: center;
   justify-content: center;
