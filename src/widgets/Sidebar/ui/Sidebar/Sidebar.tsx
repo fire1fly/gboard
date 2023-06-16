@@ -7,6 +7,8 @@ import { LangSwitcher } from 'shared/ui/LangSwitcher';
 import { useTranslation } from 'react-i18next';
 import { Button, ButtonSize, ButtonTheme } from 'shared/ui/Button';
 import IconArrowLeft from 'shared/assets/icons/icon-angle-bracket-left.svg';
+import { useSelector } from 'react-redux';
+import { getUserAuthData } from 'entities/User';
 import { SidebarItemList } from '../../model/items';
 import cls from './Sidebar.module.scss';
 import { SidebarItem } from '../SidebarItem/SidebarItem';
@@ -20,17 +22,21 @@ export const Sidebar: FC<SidebarProps> = memo(({ className }) => {
 
   const { t } = useTranslation('');
 
+  const isAuth = useSelector(getUserAuthData);
+
   const onToggle = () => {
     setCollapsed((prev) => !prev);
   };
 
-  const itemList = useMemo(() => SidebarItemList.map((item) => (
-    <SidebarItem
-      key={item.path}
-      item={item}
-      collapsed={collapsed}
-    />
-  )), [collapsed]);
+  const itemList = useMemo(() => SidebarItemList
+    .filter((item) => !(item.authOnly && !isAuth))
+    .map((item) => (
+      <SidebarItem
+        key={item.path}
+        item={item}
+        collapsed={collapsed}
+      />
+    )), [isAuth, collapsed]);
 
   return (
     <div
