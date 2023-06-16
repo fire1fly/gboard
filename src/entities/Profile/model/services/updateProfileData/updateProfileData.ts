@@ -1,11 +1,11 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import i18next from 'i18next';
 import { ThunkConfig } from 'app/providers/StoreProvider';
-import { Profile } from '../../types/profile';
+import { Profile, ValidateProfileError } from '../../types/profile';
 import { getProfileForm } from '../../selectors/getProfileForm/getProfileForm';
+import { validateProfileData } from '../validateProfileData/validateProfileData';
 
 export const updateProfileData = createAsyncThunk<
-  Profile, void, ThunkConfig<string>
+  Profile, void, ThunkConfig<ValidateProfileError[]>
 >(
   'profile/updateProfileData',
   async (_, thunkAPI) => {
@@ -16,14 +16,20 @@ export const updateProfileData = createAsyncThunk<
     } = thunkAPI;
 
     const formData = getProfileForm(getState());
+    const errors = validateProfileData(formData);
+
+    console.log('profile errors', errors);
+
+    if (errors.length) {
+      return rejectWithValue(errors);
+    }
 
     try {
       const response = await extra.api.put<Profile>('/profile', formData);
-
       return response.data;
     } catch (e) {
       console.log(e);
-      return rejectWithValue(i18next.t('errors:profileLoading'));
+      return rejectWithValue([ValidateProfileError.SERVER_ERROR]);
     }
   },
 );
