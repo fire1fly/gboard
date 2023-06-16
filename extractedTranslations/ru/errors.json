@@ -1,4 +1,9 @@
 {
+  "incorrectAge": "incorrectAge",
+  "incorrectCountry": "incorrectCountry",
+  "incorrectData": "incorrectData",
+  "noData": "noData",
   "profileLoading": "profileLoading",
-  "reload": "reload"
+  "reload": "reload",
+  "serverError": "serverError"
 }

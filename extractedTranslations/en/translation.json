@@ -13,6 +13,11 @@
   "about": {
     "title": ""
   },
+  "errors:incorrectAge": "errors:incorrectAge",
+  "errors:incorrectCountry": "errors:incorrectCountry",
+  "errors:incorrectData": "errors:incorrectData",
+  "errors:noData": "errors:noData",
+  "errors:serverError": "errors:serverError",
   "form": {
     "label": {
       "name": "",

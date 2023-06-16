@@ -38,7 +38,12 @@
   "errors": {
     "userNotLogin": "The user is not logged in",
     "profileLoading": "Profile loading error",
-    "reload": "Reload page"
+    "reload": "Reload page",
+    "serverError": "Server error",
+    "noData": "No data",
+    "incorrectAge": "Incorrect age",
+    "incorrectCountry": "Incorrect country",
+    "incorrectData": "Incorrect data"
   },
   "logout_label": "Log out",
   "buttonLabel": {

@@ -38,7 +38,12 @@
   "errors": {
     "userNotLogin": "Пользователь не авторизован",
     "profileLoading": "Ошибка загрузки профиля",
-    "reload": "Перезагрузите страницу"
+    "reload": "Перезагрузите страницу",
+    "serverError": "Ошибка сервера",
+    "noData": "Нет данных",
+    "incorrectAge": "Неккоректный возраст",
+    "incorrectCountry": "Неккоректная страна",
+    "incorrectData": "Неккоректные данные"
   },
   "logout_label": "Выйти",
   "buttonLabel": {
